@@ -431,7 +431,7 @@ INT8U MCP_CAN::mcp2515_init(const INT8U canSpeed, const INT8U clock)            
 	if (res > 0)
 	{
 #if DEBUG_MODE
-		Serial.print("Enter setting mode fall\r\n");
+		Serial.print("Enter setting mode failed\r\n");
 #endif
 		return res;
 	}
@@ -443,12 +443,12 @@ INT8U MCP_CAN::mcp2515_init(const INT8U canSpeed, const INT8U clock)            
 	if (mcp2515_configRate(canSpeed, clock))
 	{
 #if DEBUG_MODE
-		Serial.print("set rate fall!!\r\n");
+		Serial.print("Setting rate fail!!\r\n");
 #endif
 		return res;
 	}
 #if DEBUG_MODE
-	Serial.print("set rate success!!\r\n");
+	Serial.print("Setting rate success!!\r\n");
 #endif
 
 	if (res == MCP2515_OK) {
@@ -485,7 +485,7 @@ INT8U MCP_CAN::mcp2515_init(const INT8U canSpeed, const INT8U clock)            
 		if (res)
 		{
 #if DEBUG_MODE        
-			Serial.print("Enter Normal Mode Fall!!\r\n");
+			Serial.print("Enter Normal Mode Fail!!\r\n");
 #endif           
 			return res;
 		}
